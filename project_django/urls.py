@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('penonton/', include('penonton.urls')),
     path('', include('example_app.urls')),
+    path('authentication/', include('authentication.urls')),
 ]

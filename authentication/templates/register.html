@@ -1,0 +1,45 @@
+{% include 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>U-League | Register</title>
+  </head>
+  <body>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        .h-100 .h-custom {
+            width: 100%;
+            height: 100%;
+            display: table;
+            text-align: center;
+        }
+    </style>
+    <section class="h-100 h-custom" style="background: rgb(2,0,36); background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(60,161,199,1) 50%, rgba(0,123,255,1) 100%);">
+        <div class="container py-5 h-100" style="height: 100vh;">
+            <div class="row d-flex justify-content-center align-items-center h-100" style="height: 100vh;">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="card rounded-3">
+                        <center>
+                        <div class="card-body p-4 p-md-5">
+                            <center>
+                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Role</h3>
+                                <button type="submit" class="btn btn-lg mb-1" style="background-color: #3ca1c7; color: #FFFFFF" href="{% url 'authentication:register_panitia_page' %}">Manager</button>
+                                <div></div>
+                                <button type="submit" class="btn btn-lg mb-1" style="background-color: #3ca1c7; color: #FFFFFF" href="{% url 'authentication:register_manager_penonton_page' %}">Penonton</button>
+                                <div></div>
+                                <button type="submit" class="btn btn-lg mb-1" style="background-color: #3ca1c7; color: #FFFFFF" href="{% url 'authentication:register_manager_penonton_page' %}">Panitia</button>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </body>
+{% endblock content %}
+</html>
