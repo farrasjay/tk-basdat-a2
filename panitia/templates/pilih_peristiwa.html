@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block content %}
+{% include 'navbar_panitia.html' %}
+<section class="tw-flex tw-w-full tw-w-full tw-h-screen tw-justify-center tw-items-center 
+tw-bg-gradient-to-r tw-from-[rgba(2,0,36,1)] tw-via-[rgba(60,161,199,1)] tw-to-[rgba(0,123,255,1)]">
+  <div class="tw-flex tw-flex-col tw-p-12 tw-gap-10 tw-items-center tw-bg-white">
+    <h1 class="tw-text-5xl tw-font-bold">Pilih Peristiwa Tim A</h1>
+    <div class="tw-flex tw-gap-2 tw-w-full">
+      <table class="tw-w-full tw-text-left">
+        <thead class="tw-uppercase">
+          <tr class="tw-text-center  tw-border-b">
+            <th scope="col" class="tw-px-6 tw-py-3">
+              Nama pemain
+            </th>
+            <th scope="col" class="tw-px-6 tw-py-3">
+              Peristiwa
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tw-bg-white tw-border-b tw-text-center">
+            <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
+              <select id="nama-pemain" class="tw-w-full">
+                <option value="">None</option>
+              </select>
+            </td>
+            <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
+              <select id="peristiwa" class="tw-w-full">
+                <option value="kartu kuning">kartu kuning</option>
+                <option value="kartu merah">kartu merah</option>
+                <option value="assist">assist</option>
+                <option value="gol" selected>gol</option>
+                <option value="none" selected>none</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+
+  <a href="">
+    <button class="tw-text-blue-800 tw-text-xl hover:tw-underline">Submit</button>
+  </a>
+</section>
+{% endblock content %}
