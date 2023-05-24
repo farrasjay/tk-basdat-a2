@@ -7,32 +7,39 @@
 {% include 'navbar_penonton.html' %}
 <section class="tw-flex tw-w-full tw-w-full tw-h-screen tw-justify-center tw-items-center 
 tw-bg-gradient-to-r tw-from-[rgba(2,0,36,1)] tw-via-[rgba(60,161,199,1)] tw-to-[rgba(0,123,255,1)]">
-  <div class="tw-flex tw-w-[40%] tw-flex-col tw-p-8 tw-gap-8 tw-items-center tw-bg-white">
-    <h1 class="tw-text-5xl tw-font-bold">Beli Tiket</h1>
-    <div class="tw-flex tw-gap-2 tw-w-full">
-      <label class="tw-font-bold tw-w-[30%]">Jenis Tiket: </label>
-      <select id="stadium" class="tw-w-full">
-        <option value="vip">VIP</option>
-        <option value="main east">Main East</option>
-        <option value="kategori 1">Kategori 1</option>
-        <option value="kategori 2" selected>Kategori 2</option>
-      </select>
-    </div>
-
-    <div class="tw-flex tw-gap-2 tw-w-full">
-      <label class="tw-font-bold tw-w-[30%]">Pembayaran: </label>
-      <select id="stadium" class="tw-w-full">
-        <option value="debit credit">Debit/Credit Card</option>
-        <option value="e-wallet">E-wallet</option>
-        <option value="paypal">Paypal</option>
-      </select>
-    </div>
-
-    <a href="">
-      <button class="tw-text-blue-800 tw-text-xl hover:tw-underline">Beli</button>
-    </a>
-  </div>
-
+  <form method="POST" class="tw-w-[40%]">
+    <div class="tw-flex tw-flex-col tw-p-8 tw-gap-8 tw-items-center tw-bg-white">
+      <h1 class="tw-text-5xl tw-font-bold">Beli Tiket</h1>
+      <div class="tw-flex tw-gap-2 tw-w-full">
+        <label class="tw-font-bold tw-w-[30%]">Jenis Tiket: </label>
+        <select aria-label="Default select example" name="jenis" class="form-select tw-w-full">
+          {% for jenis in jenis_list %}
+            <option value={{jenis}}>
+                {{jenis}}
+            </option>
+          {%endfor%}
+        </select>
+      </div>
   
+      <div class="tw-flex tw-gap-2 tw-w-full">
+        <label class="tw-font-bold tw-w-[30%]">Pembayaran: </label>
+        <select class="form-select tw-w-full" aria-label="Default select example" name="pembayaran">
+          {% for metode in pembayaran_list %}
+              <option value={{metode}}>
+                  {{metode}}
+              </option>
+          {%endfor%}
+        </select>
+      </div>
+  
+      <div class="tw-w-full tw-flex tw-justify-center">
+        <button class="tw-text-blue-800 tw-text-xl hover:tw-underline" type="submit" value="buat">Next</button>
+      </div>
+
+      {% if isNotValid %}
+        <p class="tw-text-center tw-text-red-500">{{message}}<p>
+      {% endif %}
+    </div>
+  </form>
 </section>
 {% endblock content %}

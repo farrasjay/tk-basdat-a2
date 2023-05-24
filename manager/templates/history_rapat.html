@@ -31,45 +31,41 @@ tw-bg-gradient-to-r tw-from-[rgba(2,0,36,1)] tw-via-[rgba(60,161,199,1)] tw-to-[
           </tr>
         </thead>
         <tbody>
-          <tr class="tw-bg-white tw-border-b tw-text-center">
-            <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
-              A vs B
-            </td>
-            <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
-              XYZ
-            </td>
-            <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
-              Sapphire Stadium
-            </td>
-            <td class="tw-px-6 tw-py-4">
-              1 Mei 2023, 07.00 - 09.00
-            </td>
-            <td class="tw-px-6 tw-py-4">
-              <a href="">
-                <button class="tw-text-blue-800 tw-text-xl hover:tw-underline">Lihat laporan rapat</button>
-              </a>
-            </td>
-          </tr>
-          <tr class="tw-bg-white tw-border-b tw-text-center">
-            <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
-              C vs D
-            </td>
-            <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
-              XYZ
-            </td>
-            <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
-              Sapphire Stadium
-            </td>
-            <td class="tw-px-6 tw-py-4">
-              7 Mei 2023, 09.00 - 09.00
-            </td>
-            <td class="tw-px-6 tw-py-4">
-              <a href="">
-                <button class="tw-text-blue-800 tw-text-xl hover:tw-underline">Lihat laporan rapat</button>
-              </a>
-            </td>
-          </tr>
-        </tbody>
+          {%for rapat in list_rapat%}
+            <tr class="tw-bg-white tw-border-b tw-text-center">
+              <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
+                {{rapat.tim_a}} vs {{rapat.tim_b}}
+              </td>
+              <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
+                {{rapat.stadium}}
+              </td>
+              <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
+                {{rapat.panitia}}
+              </td>
+              <td class="tw-px-6 tw-py-4">
+                {{rapat.display}}
+              </td>
+              <td class="tw-px-6 tw-py-4">
+                  <button type="button" data-bs-toggle="modal" data-bs-target=#mod{{forloop.counter}} class="tw-text-blue-800 tw-text-xl hover:tw-underline">Lihat laporan rapat</button>
+              </td>
+            </tr>
+          </tbody>
+
+          <div class="modal fade" id=mod{{forloop.counter}} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Isi Rapat</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  {{rapat.isi}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
     </table>
   </div>
 

@@ -14,39 +14,29 @@ tw-bg-gradient-to-r tw-from-[rgba(2,0,36,1)] tw-via-[rgba(60,161,199,1)] tw-to-[
         <thead class="tw-uppercase">
           <tr class="tw-text-center  tw-border-b">
             <th scope="col" class="tw-px-6 tw-py-3">
-              Tim Bertanding
+              Tim 1
             </th>
             <th scope="col" class="tw-px-6 tw-py-3">
-              Stadium
+              Tim 2
             </th>
             <th scope="col" class="tw-px-6 tw-py-3">
-              Tanggal dan Waktu
+              Action
             </th>
           </tr>
         </thead>
         <tbody>
+          {%for game in list_pertandingan%}
           <tr class="tw-bg-white tw-border-b tw-text-center">
-            <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
-              A vs B
-            </td>
-            <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
-              Sapphire Stadium
-            </td>
-            <td class="tw-px-6 tw-py-4">
-              5 Mei 2023, 07.00 - 09.00
+            <td>{{game.tim_a}}</td>
+            <td>{{game.tim_b}}</td>
+            <td>
+              <form METHOD="POST">     
+                <input hidden id="time" value={{game.id_pertandingan}} type="text" name="pertandingan"></input>
+                <button class="tw-text-blue-800 tw-text-xl hover:tw-underline" type="submit">Next</button>
+              </form>
             </td>
           </tr>
-          <tr class="tw-bg-white tw-border-b tw-text-center">
-            <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
-              C vs D
-            </td>
-            <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
-              Sapphire Stadium
-            </td>
-            <td class="tw-px-6 tw-py-4">
-              7 Juli 2023, 13.00 - 15.00
-            </td>
-          </tr>
+          {%endfor%}
         </tbody>
     </table>
   </div>

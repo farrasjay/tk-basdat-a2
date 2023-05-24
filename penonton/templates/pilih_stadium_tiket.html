@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block content %}
+{% include 'navbar_penonton.html' %}
+<section class="tw-flex tw-w-full tw-w-full tw-h-screen tw-justify-center tw-items-center 
+tw-bg-gradient-to-r tw-from-[rgba(2,0,36,1)] tw-via-[rgba(60,161,199,1)] tw-to-[rgba(0,123,255,1)]">
+  <div class="tw-flex tw-flex-col tw-p-8 tw-gap-4 tw-items-center tw-bg-white">
+    <h1 class="tw-text-5xl tw-font-bold">Pilih Stadium</h1>
+    <form method="POST" class="tw-flex tw-flex-col tw-p-8 tw-gap-8">
+      <div class="tw-flex tw-gap-2 tw-w-full">
+        <label class="tw-font-bold">Stadium: </label>
+        <select aria-label="Default select example" name="stadium" class="tw-w-full form-select">
+          {% for data in stadiums %}
+              <option value={{data.id_stadium}}>
+                  {{data.nama}}
+              </option>
+          {%endfor%}
+        </select>
+      </div>
+  
+      <div class="tw-flex tw-gap-2 tw-w-full">
+        <label class="tw-font-bold">Tanggal: </label>
+        <input type="date" id="date" name="date" class="tw-w-full">
+      </div>
+  
+      {% if isNotValid %}
+        <p class="tw-text-center tw-text-red-500">{{message}}<p>
+      {% endif %}
+      
+      <div class="tw-w-full tw-flex tw-justify-center">
+        <button class="tw-text-blue-800 tw-text-xl hover:tw-underline" type="submit" value="buat">Next</button>
+      </div>
+    </div>
+    </form>
+</section>
+{% endblock content %}

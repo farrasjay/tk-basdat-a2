@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'manager',
     'panitia',
     'penonton',
+    'pertandingan',
 ]
 
 MIDDLEWARE = [
