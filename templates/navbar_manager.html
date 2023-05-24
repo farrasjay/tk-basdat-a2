@@ -18,7 +18,7 @@
                 <a class="nav-item nav-link" href="#">History Rapat</a>
             </div>
         </div>
-        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
+        <a href="{% url 'authentication:logout_user_system' %}" class="btn btn-outline-danger my-2 my-sm-0">Logout</a>
     </nav>
 {% endblock content %}
 </html>

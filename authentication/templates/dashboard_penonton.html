@@ -1,4 +1,4 @@
-{% include 'navbar_panitia.html' %}
+{% include 'navbar_penonton.html' %}
 {% block content %}
 {% load static %}
 
@@ -32,15 +32,14 @@
                         <center>
                         <div class="card-body p-4 p-md-5">
                             <center>
-                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Hello There, Panitia!</h3>
+                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Hello There, Penonton!</h3>
                                 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Username : {{data.username}}</h3>
-                                <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Nama Depan : {{panitia_dashboard_data.nama_depan}}</h5>
-                                <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Nama Belakang : {{panitia_dashboard_data.nama_belakang}}</h5>
-                                <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Nomor HP : {{panitia_dashboard_data.nomor_hp}}</h5>
-                                <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Email : {{panitia_dashboard_data.email}}</h5>
-                                <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Alamat : {{panitia_dashboard_data.alamat}}</h5>
-                                <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Status : {{panitia_dashboard_data.status}}</h5>
-                                <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Jabatan : {{panitia_dashboard_data.jabatan}}</h5>
+                                <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Nama Depan : {{penonton_dashboard_data.nama_depan}}</h5>
+                                <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Nama Belakang : {{penonton_dashboard_data.nama_belakang}}</h5>
+                                <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Nomor HP : {{penonton_dashboard_data.nomor_hp}}</h5>
+                                <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Email : {{penonton_dashboard_data.email}}</h5>
+                                <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Alamat : {{penonton_dashboard_data.alamat}}</h5>
+                                <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Status : {{penonton_dashboard_data.status}}</h5>
                             </center>
                         </div>
                     </div>
@@ -53,20 +52,22 @@
             <div class="row d-flex justify-content-center align-items-center h-100" style="height: 100vh;">
                 <div class="col-lg-8 col-xl-6">
                     <div class="card rounded-3">
-                        {% if panitia_rapat_data != null %}
+                        {% if penonton_pertandingan_data != null %}
                             <div class="card-body p-4 p-md-5">
                                 <center>
-                                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Rapat</h3>
-                                    <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">ID Pertandingan : {{panitia_rapat_data.id_pertandingan}}</h5>
-                                    <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Tanggal : {{panitia_rapat_data.datetime}}</h5>
-                                    <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Isi Rapat : {{panitia_rapat_data.isi_rapat}}</h5>
+                                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Pertandingan</h3>
+                                    <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Jenis Tiket : {{penonton_pertandingan_data.jenis_tiket}}</h5>
+                                    <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Nama Stadium : {{penonton_pertandingan_data.nama}}</h5>
+                                    <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Alamat Stadium : {{penonton_pertandingan_data.alamat}}</h5>
+                                    <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Tanggal Mulai : {{penonton_pertandingan_data.start_datetime}}</h5>
+                                    <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Tanggal Selesai : {{penonton_pertandingan_data.end_datetime}}</h5>
                                 </center>
                             </div>
                         {% else %}
                             <div class="card-body p-4 p-md-5">
                                 <center>
-                                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Rapat</h3>
-                                    <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Belum Ada Rapat</h5>
+                                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Pertandingan</h3>
+                                    <h5 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Belum Memesan Pertandingan</h5>
                                 </center>
                             </div>
                         {% endif %}
