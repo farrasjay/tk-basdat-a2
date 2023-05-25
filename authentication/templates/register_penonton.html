@@ -25,36 +25,38 @@
                 <div class="col-lg-8 col-xl-6">
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
+                            <div id = "errorMessage"></div>
                             <center>
                                 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Form - Penonton</h3>
                             </center>
-                            <form class="px-md-2">
+                            <form class="px-md-2" id = "regPenontonSubmit" method = "POST">
+                                {% csrf_token %}
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" placeholder="Username"/>
+                                    <input type="text" class="form-control" placeholder="Username" id="usernameField" name="usernameField" aria-required="Input Tidak Boleh Kosong!"/>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" placeholder="Password"/>
+                                    <input type="text" class="form-control" placeholder="Password" id="passwordField" name="passwordField" aria-required="Input Tidak Boleh Kosong!"/>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" placeholder="Nama Depan"/>
+                                    <input type="text" class="form-control" placeholder="Nama Depan" id="firstNameField" name="firstNameField" aria-required="Input Tidak Boleh Kosong!"/>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" placeholder="Nama Belakang"/>
+                                    <input type="text" class="form-control" placeholder="Nama Belakang" id="lastNameField" name="lastNameField" aria-required="Input Tidak Boleh Kosong!"/>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" placeholder="Nomor HP"/>
+                                    <input type="text" class="form-control" placeholder="Nomor HP" id="phoneNumberField" name="phoneNumberField" aria-required="Input Tidak Boleh Kosong!"/>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" placeholder="Email"/>
+                                    <input type="text" class="form-control" placeholder="Email" id="emailField" name="emailField" aria-required="Input Tidak Boleh Kosong!"/>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" placeholder="Alamat"/>
+                                    <input type="text" class="form-control" placeholder="Alamat" id="addressField" name="addressField" aria-required="Input Tidak Boleh Kosong!"/>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" placeholder="Status"/>
+                                    <input type="text" class="form-control" placeholder="Status" id="statusField" name="statusField" aria-required="Input Tidak Boleh Kosong!"/>
                                 </div>
                                 <center>
-                                    <button type="submit" class="btn btn-lg mb-1" style="background-color: #3ca1c7; color: #FFFFFF" href="#">Daftar</button>
+                                    <button type="submit" class="btn btn-lg mb-1" style="background-color: #3ca1c7; color: #FFFFFF">Daftar</button>
                                 </center>
                             </form>
                         </div>

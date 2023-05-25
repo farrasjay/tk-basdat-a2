@@ -28,11 +28,11 @@
                         <div class="card-body p-4 p-md-5">
                             <center>
                                 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Role</h3>
-                                <button type="submit" class="btn btn-lg mb-1" style="background-color: #3ca1c7; color: #FFFFFF" href="{% url 'authentication:register_panitia_page' %}">Manager</button>
+                                <a href="{% url 'authentication:register_manager_page' %}" class="btn btn-lg mb-1" style="background-color: #3ca1c7; color: #FFFFFF">Manager</a>
                                 <div></div>
-                                <button type="submit" class="btn btn-lg mb-1" style="background-color: #3ca1c7; color: #FFFFFF" href="{% url 'authentication:register_manager_penonton_page' %}">Penonton</button>
+                                <a href="{% url 'authentication:register_penonton_page' %}" class="btn btn-lg mb-1" style="background-color: #3ca1c7; color: #FFFFFF">Penonton</a>
                                 <div></div>
-                                <button type="submit" class="btn btn-lg mb-1" style="background-color: #3ca1c7; color: #FFFFFF" href="{% url 'authentication:register_manager_penonton_page' %}">Panitia</button>
+                                <a href="{% url 'authentication:register_panitia_page' %}" class="btn btn-lg mb-1" style="background-color: #3ca1c7; color: #FFFFFF">Panitia</a>
                             </center>
                         </div>
                     </div>

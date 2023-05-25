@@ -11,11 +11,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">Dashboard</a>
+                <a class="nav-item nav-link" href="{% url 'authentication:dashboard' %}">Dashboard</a>
                 <a class="nav-item nav-link" href="#">Mengelola Tim</a>
                 <a class="nav-item nav-link" href="#">Peminjaman Stadium</a>
-                <a class="nav-item nav-link" href="#">List Pertandingan</a>
-                <a class="nav-item nav-link" href="#">History Rapat</a>
+                <a class="nav-item nav-link" href="/pertandingan/list-pertandingan-manager">List Pertandingan</a>
+                <a class="nav-item nav-link" href="/manager/history-rapat">History Rapat</a>
             </div>
         </div>
         <a href="{% url 'authentication:logout_user_system' %}" class="btn btn-outline-danger my-2 my-sm-0">Logout</a>
