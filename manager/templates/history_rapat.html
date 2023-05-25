@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block content %}
+{% include 'navbar_manager.html' %}
+<section class="tw-flex tw-w-full tw-w-full tw-h-screen tw-justify-center tw-items-center 
+tw-bg-gradient-to-r tw-from-[rgba(2,0,36,1)] tw-via-[rgba(60,161,199,1)] tw-to-[rgba(0,123,255,1)]">
+  <div class="tw-flex tw-flex-col tw-p-12 tw-gap-10 tw-items-center tw-bg-white">
+    <h1 class="tw-text-5xl tw-font-bold">List Rapat</h1>
+    <div class="tw-flex tw-gap-2 tw-w-full">
+      <table class="tw-w-full tw-text-left">
+        <thead class="tw-uppercase">
+          <tr class="tw-text-center  tw-border-b">
+            <th scope="col" class="tw-px-6 tw-py-3">
+              Rapat Tim
+            </th>
+            <th scope="col" class="tw-px-6 tw-py-3">
+              Stadium
+            </th>
+            <th scope="col" class="tw-px-6 tw-py-3">
+              Nama Panitia
+            </th>
+            <th scope="col" class="tw-px-6 tw-py-3">
+              Tanggal dan Waktu
+            </th>
+            <th scope="col" class="tw-px-6 tw-py-3">
+              Waktu
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for rapat in list_rapat%}
+            <tr class="tw-bg-white tw-border-b tw-text-center">
+              <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
+                {{rapat.tim_a}} vs {{rapat.tim_b}}
+              </td>
+              <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
+                {{rapat.stadium}}
+              </td>
+              <td scope="row" class="tw-px-6 tw-py-4 tw-font-medium tw-text-gray-900 tw-whitespace-nowrap">
+                {{rapat.panitia}}
+              </td>
+              <td class="tw-px-6 tw-py-4">
+                {{rapat.display}}
+              </td>
+              <td class="tw-px-6 tw-py-4">
+                  <button type="button" data-bs-toggle="modal" data-bs-target=#mod{{forloop.counter}} class="tw-text-blue-800 tw-text-xl hover:tw-underline">Lihat laporan rapat</button>
+              </td>
+            </tr>
+          </tbody>
+
+          <div class="modal fade" id=mod{{forloop.counter}} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Isi Rapat</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  {{rapat.isi}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+    </table>
+  </div>
+
+  
+</section>
+{% endblock content %}

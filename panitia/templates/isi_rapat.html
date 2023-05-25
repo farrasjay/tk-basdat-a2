@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block content %}
+{% include 'navbar_panitia.html' %}
+<section class="tw-flex tw-w-full tw-w-full tw-h-screen tw-justify-center tw-items-center 
+tw-bg-gradient-to-r tw-from-[rgba(2,0,36,1)] tw-via-[rgba(60,161,199,1)] tw-to-[rgba(0,123,255,1)]">
+  <div class="tw-flex tw-flex-col tw-p-8 tw-gap-8 tw-items-center tw-bg-white">
+    <h1 class="tw-text-5xl tw-font-bold">Rapat Pertandingan A vs B</h1>
+    <div class="tw-flex tw-gap-2 tw-w-full">
+      <label class="tw-font-bold">Isi rapat: </label>
+      <textarea placeholder="isi rapat" class=" tw-px-2 tw-h-28 tw-w-[80%] tw-border-black/40 tw-rounded tw-border-2"></textarea>
+    </div>
+
+    <a href="">
+      <button class="tw-text-blue-800 tw-text-xl hover:tw-underline">Submit</button>
+    </a>
+  </div>
+
+  
+</section>
+{% endblock content %}
