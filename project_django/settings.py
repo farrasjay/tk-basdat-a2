@@ -35,9 +35,9 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://localhost/',
-    'https://web-production-402e.up.railway.app/',
-    'http://127.0.0.1/',
+    'http://localhost',
+    'https://web-production-402e.up.railway.app',
+    'http://127.0.0.1',
 ]
 
 # Application definition
